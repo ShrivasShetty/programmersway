@@ -1,1 +1,58 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'home/homeP.css' %}">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <title>
+            Programmers way, flight booking, cheap flight booking.
+        </title>
 
+    </head>
+        <body>
+            <div class="nav">
+                <img src="{% static 'ProgrammersWay.jpg' %}">
+                <nav>
+                    <ul>
+                        <li><a href="/">Flight</a></li>
+                        {% if user.is_authenticated %}
+                        <li><a href="/profile">Profile</a></li>
+                        {% else %}
+                        <li><a href="/login">Profile</a></li>
+                        {% endif %}
+                        <li><a href="/feedback">Feedback</a></li>
+                        <li><a href="/about">About US</a></li>
+                        {% if user.is_authenticated %}
+                        <li><a href="/logout">Logout</a></li>
+                        {% else %}
+                        <li><a href="/login">Login</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+         
+            {% block body %}{% endblock body %}
+         
+            <div class="footer" style="background-color:black;color:white;padding:10px">
+                <footer style="display: flex;flex-direction:row;justify-content:space-between;margin:20px;margin-right:150px;">
+                    <div>
+                        <h2>@2022 ProgrammersWay PVT.LTD</h2>
+                        <h2>Country India</h2>
+                    </div>
+                    <div>
+                        <h3>Quick Links</h3>
+                        <div style="display: flex;flex-direction:column;color:white;text-decoration:none;">
+                            <a href="" style="color:white;text-decoration:none;">Flights</a>
+                            <a href="/profile" style="color:white;text-decoration:none;">Profile</a>
+                            <a href="/feedback" style="color:white;text-decoration:none;">Feedback</a>
+                            <a href="/about" style="color:white;text-decoration:none;">About US</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        <script src="{% static 'home/main.js' %}"></script>
+        </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="{% static 'feedback/css/register.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+    
+    <div class="container">
+        
+    {% if messages %}
+    {% for msg in messages %}
+    <div class="msg-div"
+        style="text-align: center;width:100%;padding: 10px;background-color: rgb(16, 173, 16);color:white;">
+        <p class="sc-msg">{{msg}}</p>
+    </div>
+    
+    {% endfor %}
+    {% endif %}
+        <div>
+            <form method="post">
+                {% csrf_token %}
+                <img src="{% static 'ProgrammersWay.jpg' %}" alt="" class="img">
+                <h2>Feedback</h2>
+                <label>Email</label>
+                <input type="email" name="email" class="inputs">
+
+                <label>Username</label>
+                <input type="text" name="username" class="inputs">
+
+                <label>Address</label>
+                <textarea name="address" id="" cols="1" rows="1" class="inputs" style="resize: none;"></textarea>
+
+                <label>Gender</label>
+                <select class="inputs" id="" name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Others">Others</option>
+                </select>
+
+                <label>Message</label>
+                <textarea name="message" id="" cols="3" rows="3" class="inputs" style="resize: none;"></textarea>
+                <input type="submit" name="sub" class="btn" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+ 

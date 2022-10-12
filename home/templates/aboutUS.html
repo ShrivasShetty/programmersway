@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'about/aboutUS.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+
+    <div >
+        <nav class="abo-nav">
+        <a href="#abou">About-us</a>
+        <a href="#p&s">product and service</a>
+        <a href="#strength">Strengths</a>
+        <a href="#co-fo">C0-Founders</a>
+        </nav>
+    </div>
+
+    <div class="container aboutUs-content">
+        <div class="content" id="about">
+            <h1 class="title">ABOUT US</h1>
+            <p>Progrmmers way embarked on its journey in the Indian travel industry in 2017, bringing affordable flight booking solutions for 
+                Indian business and leisure travellers. After witnessing rapid growth in the flight booking space, the company forayed into 
+                the hotel booking genre to add to the convenience of its customers and help them save more while travelling. Progrmmers way 
+                 become India’s leading online travel aggregator in an extremely short span.
+            </p>
+            <p>Through its various platforms, Progrmmers way offers domestic and international flight tickets along with thousands of hotels
+                 across India. The strength of Progrmmers way lies in providing the best flight and hotel booking deals along with a hassle-free
+                  experience to its customers. Surpassing all expectations, the company has built a vast customer base of business and leisure
+                   travellers who frequently avail its services.
+            </p>
+            <p>HEG’s seamless platforms help customers search, compare, choose and book from a wide range of flight ticket and accommodation
+                 solutions. The Progrmmers way mobile applications for Android and iOS devices has been downloaded more than a million times and
+                  are highly rated on both Google Play and AppStore.
+            </p>
+        </div>
+    </div>
+
+    <div>
+        <div class="product" id="p&s">
+            <center><h1 style="color: #017959 ; font-size: 42px;">Our Products & Services</h1></center>
+            <p>We offer a comprehensive range of travel-related products and services catering to the needs of passengers traveling 
+                domestically, as well as traveling to and from international destinations. We provide the customers with various tools 
+                and information that they need to research, plan, book and purchase travel products and services in India as well as outside
+                 India. We offer our products and services online through our websites and mobile applications, and use data and analytics to
+                  personalize the customer experience on our websites and mobile applications, based on past searches and purchasing history,
+                   which we believe increases engagement and likelihood of purchase.
+            </p>
+            <p>
+                We believe that we have been able to develop relationships across our portfolio of suppliers for airlines, hotels, holiday 
+                packages, buses and taxis. We have dedicated teams managing our existing relationships and enhancing and developing new 
+                relationships with airlines and hotel chains. Our supplier relationship teams negotiate agreements with suppliers for access
+                 to travel inventory and also monitor supplier-sponsored promotions.
+            </p>
+        </div>
+    </div>
+
+    <div>
+        <div class="our-title" >
+            <center><h1 id="strength">Our Strengths</h1></center>
+        </div>
+        <div class="main-str">
+            <div class="main-pr">
+                <div class="main-para">
+                    <span class="icon-dia"></span>
+                    <p class="str-qut">One of the leading online travel agencies in India with a customer focused approach, 
+                        including the option of no-convenience fee</p>
+                </div>
+                <div class="main-para">
+                    <span class="icon-dia"></span>
+                    <p class="str-qut">Consistent track record of financial and operational performance with lean and cost efficient operations</p>
+                </div>
+                <div class="main-para">
+                    <span class="icon-dia"></span>
+                    <p class="str-qut">In-house advanced technology and analytics capabilities</p>
+                </div>
+                <div class="main-para">
+                    <span class="icon-dia"></span>
+                    <p class="str-qut">Wide distribution network supported by a hybrid platform</p>
+                </div>
+                <div class="main-para">
+                    <span class="icon-dia"></span>
+                    <p class="str-qut">Experienced management team with an established track record</p>
+                </div>
+            </div>
+            <div class="strimg">
+                <img src="{% static './images/about.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <div class="our-title" id="co-fo">
+                <center><h1>Our CO-founder</h1></center><br><br>
+            </div>
+        </div>
+        <div class="cof-img">
+            <div class="mainf">
+                <img src="{% static './images/shrivas.jpg' %}">
+                <p style="font-size: 21px"><b>Shrivas Shetty</b></p>
+                <p style="color: rgb(164, 156, 156);font-weight: 900;">FOUNDER</p>
+            </div>
+            
+        </div>
+       
+    </div>
+    <div class="footer" style="background-color:black;color:white;padding:10px;margin: -8px;margin-top: 5px;">
+        <footer style="display: flex;flex-direction:row;justify-content:space-between;margin:20px;margin-right:150px;">
+            <div>
+                <h2>@2022 ProgrammersWay PVT.LTD</h2>
+                <h2>Country India</h2>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <div style="display: flex;flex-direction:column;color:white;text-decoration:none;">
+                    <a href="/" style="color:white;text-decoration:none;">Flights</a>
+                    <a href="/profile" style="color:white;text-decoration:none;">Profile</a>
+                    <a href="../feedback/feedback.html" style="color:white;text-decoration:none;">Feedback</a>
+                    <a href="../about/aboutUS.html" style="color:white;text-decoration:none;">About US</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

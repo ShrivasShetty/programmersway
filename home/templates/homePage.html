@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<form method="post">
+    {% csrf_token %}
+<div class="main-search">
+    <br><br><br><br><br><br>
+
+       <div class="input-area">
+            <input type="text" name="fromm" id="fromm" hidden>
+          <div> <span id="mfrom"> From</span> </div>
+          <div><i class="fa-solid fa-arrows-rotate"></i></div>
+          <input type="text" name="too" id="too" hidden>
+          <div> <span id="mto"> To</span></div>
+          <div style="width: 300px;"><input type="date" id="date" name="datee" style="background-color: transparent;border:none;font-size:19px;outline:none;"></div>
+          <div style="width: 300px;"><select name="travellers" id="" style=" background-color: transparent; padding: 7px;position:relative;top:-5px;border:none;font-size:19px;outline:none;">
+           <option value="1">1 Traveller(s)</option>
+           <option value="2">2 Traveller(s)</option>
+           <option value="3">3 Traveller(s)</option>
+           </select>
+           </div>
+       </div>
+       <div>
+           <button type="submit"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;&nbsp;Search</button>
+       </div>
+       
+       <div class="f hide" >
+           <div class="from-card">
+               <div>
+                   <h4><i class="fa-solid fa-plane"></i>&nbsp;&nbsp;<span>Dehli</span> </h4>
+                   <p>india</p>
+               </div>
+               <div>
+                   <h4><i class="fa-solid fa-plane"></i>&nbsp;&nbsp;<span>Mumbai</span> </h4>
+                   <p>india</p>
+               </div>
+               <div>
+                   <h4><i class="fa-solid fa-plane"></i>&nbsp;&nbsp;<span>Mangalore</span> </h4>
+                   <p>india</p>
+               </div>
+               <div>
+                   <h4><i class="fa-solid fa-plane"></i>&nbsp;&nbsp;<span>Hyderabad</span> </h4>
+                   <p>india</p>
+               </div>
+               <div style="border: none;">
+                   <h4><i class="fa-solid fa-plane"></i>&nbsp;&nbsp;<span>Chennai</span> </h4>
+                   <p>india</p>
+               </div>
+
+           </div>
+       </div>
+
+      
+
+       <div class="t hide" >
+           <div class="to-card">
+               <div>
+                   <h4><i class="fa-solid fa-plane"></i>&nbsp;&nbsp;<span>Dehli</span> </h4>
+                   <p>india</p>
+               </div>
+               <div>
+                   <h4><i class="fa-solid fa-plane"></i>&nbsp;&nbsp;<span>Mumbai</span> </h4>
+                   <p>india</p>
+               </div>
+               <div>
+                   <h4><i class="fa-solid fa-plane"></i>&nbsp;&nbsp;<span>Mangalore</span> </h4>
+                   <p>india</p>
+               </div>
+               <div>
+                   <h4><i class="fa-solid fa-plane"></i>&nbsp;&nbsp;<span>Hyderabad</span> </h4>
+                   <p>india</p>
+               </div>
+               <div style="border: none;">
+                   <h4><i class="fa-solid fa-plane"></i>&nbsp;&nbsp;<span>Chennai</span> </h4>
+                   <p>india</p>
+               </div>
+
+           </div>
+       </div>
+   </div>
+ 
+<div style="color:bisque;">
+<div class = "emg">
+     <strong>Important Info:</strong>
+    "To cancel/claim refund or reschedule/ modify your booking"
+</div>
+</div>
+<br>
+<div>
+   <div class = "free">
+       <strong>FREE Full Refund due to Medical Reasons:</strong>
+       ProgrammersWay brings an extraordinary offer in these tough times!<br>                
+       Get full refund for domestic ticket in case you cancel it due to medical sickness. Best Part – There are ZERO extra charges for this service.				
+   </div>       
+</div>
+
+<div>
+   <h2 class="Bdeal">Beast deals</h2>
+</div>
+
+<div style="height: 100px; font-size: 19px;margin:0px 40px;border-radius: 5px; display: flex;flex-direction:row;justify-content: space-around; background-color: rgb(233, 219, 219);padding: 10px;">
+<div class="custom_sel">
+   <div>
+       <div class="dfrom">Depart from </div>
+   </div>
+   <select class="sel-city" id="Citylist" ng_model="city" ng-init="'city='DEL-Delhi,India'">
+       <option value>Select</option>
+       <option value="Del-Delhi, India">Delhi (del)</option>
+       <option value="BOM-Mumbai, India">Mumbai (BOM)</option>
+       <option value="BLR-Bengaluru, India">Benguluru (BLR)</option>
+       <option vlaue="HYD-Hyderabad, India">Hyderabad (HYD)</option>
+       <option vlaue="CCU-Kolkata, India">Hyderabad (CCU)</option>
+
+   </select>
+</div>
+
+<div class="tool" style="margin-top: 10px; margin-right: 20px; border-radius: 6px;">
+  <p>Travel Period</p> 
+   <div class="toolbar" style="border-radius: 6px">
+       <p>Aug</p>
+       <p>Sep</p>
+       <p>Oct</p>
+
+   </div>
+</div>
+</div>
+
+</form>
+{% for f in filters %}
+<div class="fl_bottom" id="listByModel" >
+   <div class="mdetails">
+       <h3>{{f.fromm}} To {{f.to}}</h3>
+       <p>Saturday {{f.datee}} | Indigo</p>
+   </div>
+   <div class="price">
+       <p>One way as low as <span>₹{{f.paym}}</span> </p>
+   </div>
+   <div class="btn">
+    <a href="/pay/{{f.fromm}}/{{f.to}}"><button> Book Now</button></a>
+   </div>
+  
+</div>
+{% endfor %}
+
+<br>
+<div class="foot-top">
+   <div>
+       <div class="panel-tittle">
+           <h2>Flight Booking on Programmers Way</h2>
+       </div>
+       <div class="panel-content">
+           <p>HappyEasyGo introduces travellers to the best online flight booking experience there is. Every day, thousands of businesspersons and tourists book domestic and international flight tickets through our various platforms. Unbelievably cheap flights and a seamless air ticket booking process make travels merrier than ever. With HappyEasyGo, you can book flight tickets with sought-after Indian airlines such as IndiGo, Vistara, Go First, Air India and SpiceJet, as well as renowned international air passenger carriers like Thai Airways, Singapore Airlines and Emirates. HappyEasyGo strives to make travel dreams come true for everyone. If you have got an upcoming travel plan, access the latest offers from HappyEasyGo and take your travel game up a notch.</p>
+       </div>
+   </div>
+   <div>
+       <div class="panel-tittle">
+           <h3>Why book air ticket on Programmers way</h3>
+       </div>
+       <div class="panel-content">
+           <p>Flight bookings can be an expensive affair, especially when you don’t have the right partner to book your air tickets. HappyEasyGo offers the biggest deals on flights, making it possible to travel domestic and international without spending a fortune. Sign up on the HappyEasyGo website or mobile app to unlock new user discounts and many other offers. Also, get notified about the latest coupons and offers through the mobile app that helps you plan a trip on the go. We guarantee you the lowest airfares for domestic air tickets. If you can find a better deal anywhere else, then we will pay you triple the airfare difference. With our free flight cancellation and rescheduling options, you can also bid adieu to your worries of travel plan change. So, stop looking anywhere else and seize the hand-picked offers on flight tickets to make your travel economical.</p>
+       </div>
+   </div>
+   <div>
+       <div class="panel-tittle">
+           <h2>How to Book Cheap Flight Tickets on Programmers Way?</h2>
+       </div>
+       <div class="panel-content">
+           <p>Enjoy the lowest airfares every time you travel. Follow these steps to book air tickets on the Programmers Way website:</p><br>
+           <p><strong>Step 1:</strong> Visit our website</p>
+           <p><strong>Step 2:</strong> Enter the origin, destination, date of travel and other details before clicking on Search</p>
+           <p><strong>Step 3:</strong> Select flight and the best fare option.</p>
+           <p><strong>Step 4:</strong> Enter traveller(s) details.</p>
+           <p><strong>Step 5:</strong> Apply the best coupon code and pay for your booking.</p><br>
+           <!-- <ul style="background-color: white">
+               <li>Visit the HappyEasyGo website.</li>
+               <li>Enter the origin, destination, date of travel and other details before clicking on ‘Happy Easy Search’.</li>
+               <li>Select flight and the best fare option.</li>
+               <li>Enter traveller(s) details.</li>
+               <li>Apply the best coupon code and pay for your booking.</li>
+           </ul> -->
+           <p>The ticket will be sent by e-mail once the payment is complete.</p>
+       </div>
+   </div>
+   <div>
+       <div class="panel-tittle">
+           <h2>HappyEasyGo Flight Booking App</h2>
+       </div>
+       <div class="panel-content">
+           <p>HappyEasyGo has continuously innovated ways to cut down the efforts needed in air ticket booking. From a user-friendly interface and easy flight comparisons to quick payments and instant bookings, one can have a stress-free experience while booking domestic or international flights. The launch of our flawless travel app was another step to add to the convenience of the modern-day traveller. It is perfect for people who are always on the move. Search, compare, book, and manage your air ticket bookings without any hassles with the best travel app in India. You can download it now on your iOS or Android device.</p>
+       </div>
+   </div>
+   <div>
+       <div class="pannel-tittle">
+           <h2>FAQs - Flights</h2><br>
+       </div>
+       <div class="panel-content">
+           <h2>Where can I find the latest flight booking offers?</h2>
+           <p>You can check out the latest flight deals and discounts on the offer page. You can also choose an offer on the booking page before paying for your flight tickets.</p><br>
+           <h2>What is the best flight offer on HappyEasyGo?</h2>
+           <p>If you have not made a flight booking on HappyEasyGo before, then you can use the New User Offer to avail exclusive discount on your booking.</p><br>
+           <h2>Which airlines’ flight tickets can I book on HappyEasyGo?</h2>
+           <p>You can book IndiGo, Vistara, Air India, Go First, Air Deccan and SpiceJet flight tickets on HappyEasyGo. You can also fly with international airlines like Emirates, Qatar Airways, Etihad and more.</p><br>
+           <h2>What are the best and worst days to fly?</h2>
+           <p>Although there is no rule of thumb, Tuesdays and Wednesdays are believed to be the cheapest days to fly, while the weekend is believed to be the most expensive. So, plan your trip accordingly to save money.</p><br>
+           <h2>How do I get my flight ticket when I book on HappyEasyGo?</h2>
+           <p>The e-ticket is shared with you via e-mail. You can print and show this e-ticket at the check-in counter along with a valid photo ID.</p><br>
+           <h2>How many seats can I book in a single booking?</h2>
+           <p>You can book up to 9 seats in a single booking. Share your queries regarding group flight tickets bookings with us on Programmersway@gmail.com</p><br>
+           <h2>Can I buy travel insurance on HappyEasyGo?</h2>
+           <p>Yes. You can add insurance on the booking page. Travel insurance secures your trip against cancellation, delay, loss of baggage, missed connection and more.</p><br>
+           <h2>How do I check-in online?</h2>
+           <p>You can visit the web check-in page on the HappyEasyGo website. Links to SpiceJet, IndiGo, Vistara, Air India, Go First, Singapore Airlines, Etihad Airways and other web check-in pages are available on the same.</p><br>
+           <h2>How do I change/cancel my booking?</h2>
+           <p>You can manage your flight bookings easily on the HappyEasyGo website or app. Log into your account and visit my trips/my orders to view or change your current bookings.</p>
+       </div>
+   </div>
+</div>
+
+{% endblock body %}

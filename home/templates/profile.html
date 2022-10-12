@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'profile/profile.css' %}">
+
+    <title>Profile</title>
+</head>
+<body>
+    <div class="profile">
+
+        <div class="mid-profile">
+            <div class="menu">
+                <img src="{% static './images/menu.png' %}" class="img"alt="">
+                <div class="nav hide">
+                    <nav>
+                        <ul>
+                            <li><a href="/">Flight</a> </li>
+                            <li><a href="/profile">Profile</a></li>
+                            <li><a href="/feedback">Feedback</a></li>
+                            <li><a href="/about">About us</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <i class="fa-solid fa-xmark hide img"></i>
+            </div>
+            <div class="mainpr" id="main">
+                {% for q in qset1 %}
+                <div class="details">
+                   <center>
+                     <div class="outer">
+                        <div class="inner">
+                            <img src="{% static './images/babubhaiya.jpg' %}" alt="">
+                        </div>
+                    </div><br>
+                    <div>
+                        <h2>{{q.user}}</h2><br>
+                        <button class="btn-edit">Edit</button>
+                    </div><br>
+                    <div class="more">
+                        <p>Click for more details</p>
+                        <div class="scroll-down" id="scrolld"></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </center>
+            </div>
+
+            <div class="scroll hide" id="mscroll">
+                <div class="more-details">
+                    <div class="pdetails">
+                        <label>Email: </label>
+                        <input type="email" class="inputs" disabled value="baburao@style.com">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Mobile: </label>
+                        <input type="tel" class="inputs" disabled value="9090909090"><br><br>
+                        <label>Gender: </label>
+                        <input type="text" disabled value="Male" class="inputs">
+                        &nbsp;&nbsp;&nbsp;&nbsp;<label>Age: </label>
+                        <input type="text" disabled value="24" class="inputs">
+                    </div>
+
+                    <div class="bookings"><br>
+                        <p>Current Bookings</p><br>
+                        <input type="text" disabled value="Bangalore" class="inputs">&nbsp; TO
+                        <input type="text" disabled value="Dehli" class="inputs">
+                    </div>
+                    <div class="bookings"><br>
+                        <p>Past Bookings</p><br>
+                        <input type="text" disabled value="Mumbai" class="inputs">&nbsp; TO
+                        <input type="text" disabled value="Bangalore" class="inputs"><br><br>
+                        <input type="text" disabled value="Mumbai" class="inputs">&nbsp; TO
+                        <input type="text" disabled value="Dehil" class="inputs">
+                    </div>
+                    <div class="scroll-up" id="scrollu"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let more=document.getElementById('mscroll')
+        let scrollu=document.querySelector('.scroll-up')
+        let scrolld=document.querySelector('.scroll-down')
+        let main=document.getElementById('main')
+        let img=document.querySelector('.img')
+        let nav=document.querySelector('.nav')
+        img.addEventListener('click',()=>{
+            nav.classList.toggle('hide')
+        })
+
+        setTimeout(
+        scrolld.addEventListener('click',()=>{
+         
+            more.classList.remove('hide')
+            main.classList.add('hide')
+            nav.classList.add('hide')
+        }),1000)
+        scrollu.addEventListener('click',()=>{
+            more.classList.add('hide')
+            main.classList.remove('hide')
+            nav.classList.add('hide')
+        })
+    </script>
+</body>
+</html>

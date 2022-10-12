@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'login/css/login.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    {% if messages %}
+    {% for msg in messages %}
+    <div class="msg-div"
+        style="text-align: center;width:100%;padding: 10px;background-color: rgb(16, 173, 16);color:white;">
+        <p class="sc-msg">{{msg}}</p>
+    </div>
+    
+    {% endfor %}
+    {% endif %}
+    <div class="container">
+        <div>
+            <form method="post">
+                {% csrf_token %}
+                <img src="{% static './ProgrammersWay.jpg' %}" alt="" class="img">
+                <h2>Login</h2>
+                <label>Username</label>
+                <input type="text" name="username" class="inputs">
+
+                <label>Password</label>
+                <input type="password" name="password" class="inputs">
+                <p class="fp"><a href="">Forgot Password?</a></p>
+                <input type="submit" name="sub" class="btn" value="Login">
+                <p class="opt">or continue with</p>
+                <button class="ic-google"><i class="fa-brands fa-google"></i></button>
+                <div class="footer">
+                    <p>Not yet Registered?  <a href="/register">Register</a></p>
+                </div>
+                
+            </form>
+        </div>
+        
+    </div>
+</body>
+</html>
