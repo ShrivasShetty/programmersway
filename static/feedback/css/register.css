@@ -1,1 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-image: radial-gradient(#0085FF,#003465);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 35px;
+    padding-left: 45px;
+    padding-right: 45px;
+    width: 100%;
+    background: rgba( 255, 255, 255, 0.05 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 16px );
+    -webkit-backdrop-filter: blur( 16px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    margin-top: 20px;
+}
+form .img{
+    width: 190px;
+    padding-bottom: 10px;
+    height: 80px;
+}
+form label{
+    margin-top: 10px;
+}
+form .inputs{
+    padding: 8px;
+    margin-bottom: 7px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    width: 400px;
+}
+form .btn{
+    margin-top: 15px;
+    padding:10px;
+    border: none;
+    background-color: #003465;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+}
+form .opt{
+    text-align: center;
+    margin: 15px;
+}
+form .ic-google{
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+}
+.fa-google{
+    background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 22px;
+    -webkit-text-fill-color: transparent;
+}
 
+form .footer{
+    text-align: center;
+}
+form .footer a{
+    color: white;
+    
+}
+
+@media screen and (max-height:670px) {
+    body{
+        height: 120vh;
+    }
+}
+@media screen and (max-width:416px) {
+    form{
+        margin-top: 40px;
+        overflow-x: hidden;
+    }
+     form .inputs{
+         width: 240px;
+     }
+}
+
+
+@media screen and (max-width:300px) {
+   form{
+       margin-top: 40px;
+       overflow-x: hidden;
+   }
+    form .inputs{
+        width: 180px;
+    }
+}
