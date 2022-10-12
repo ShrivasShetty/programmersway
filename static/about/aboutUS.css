@@ -1,0 +1,140 @@
+html{
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+.container {
+    min-width: 1200px;
+}
+.abo-nav{
+    background-color: #017959;
+
+}
+a{
+    text-decoration: none;
+   color: #fff;
+   padding: 10px;
+}
+.aboutUs-content {
+    background: url("../images/index.png") no-repeat;
+    background-size: 852px 776px;
+    background-position: right 0;
+}
+
+.content{
+    width: 497px;
+    font-size: 20px;
+    line-height: 160%;
+    color: #484848;
+    margin: 50px;
+}
+
+.title{
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 52px;
+    color: #017959;
+    margin-top: 64px;
+}
+
+.product{
+    position: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 25px;
+    color: #484848;
+    line-height: 32px;
+}
+.str-text{
+    /* padding-left: 150px; */
+}
+.icon-dia{
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    display: inline-block;
+    background: #ff6d34;
+    -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+/* .icon-dia::after{
+    content: '';
+    width: 20px;
+    height:20px;
+    background-color: #ff6d34;
+    transform: translate(-50%,-50%);
+} */
+.main-para{
+    display:flex;
+    flex-direction: row;
+    margin-left: 130px;
+}
+.main-para p{
+    position: relative;
+    top: -30px;
+}
+.str-qut{
+    color: #484848;
+    font-size: 25px;
+    margin-right: 250px;
+    margin-left: 10px;
+    width: 500px;
+}
+.our-title{
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+    color: #017959 ;
+    font-size: 25px;
+}
+.main-str{
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+}
+.main-str img{
+    width: 570px;
+    height:570px;
+    position: relative;
+    top: -40px;
+    left: -50px;
+    border-radius: 8px;
+}
+.cof-img{
+    width: 570px;
+    height:570px;
+    position: relative;
+    top: -40px;
+    left: -50px;
+    border-radius: 8px;
+
+}
+.abo-nav{
+    padding: 100px;
+    font-size: 35px;
+    scroll-behavior: smooth;
+    text-align: center;
+}
+.cof-img{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 500px;
+
+}
+.cof-img img{
+    object-fit: cover;
+    width: 500px;
+    height: 500px;
+    border-radius: 7px;
+}
+.mainf{
+    margin: 10px;
+    padding:10px;
+    border-radius: 6px;
+    box-shadow: 1px 2px 50px rgb(102, 99, 99);
+}
+.cof-img p{
+    color: #017959;
+}
